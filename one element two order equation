@@ -1,0 +1,35 @@
+#ecoding=utf-8
+
+
+
+'''
+二元一次方程求根脚本
+'''
+from __future__ import division
+import math
+
+def gongshijiefa(a,b,c):
+    derta=b**2-4*a*c
+    if derta<0:
+        return False
+    elif derta==0:
+        return -(b/(2*a))
+    elif derta>0:
+        genhao_derta=math.sqrt(derta)
+        x1=(-b+genhao_derta)/(2*a)
+        x2=(-b-genhao_derta)/(2*a)
+        return x1,x2
+
+    
+a=int(input('请输入参数a:'))
+
+b=int(input('请输入参数b:'))
+
+c=int(input('请输入参数c:'))
+lst1=(a,b,c)
+print(('二元一次方程组为：%sx^2+%sx+%s=0')%(a,b,c))
+roots=gongshijiefa(*lst1)
+if roots:
+    print('计算结果为：',roots)
+else:
+    print('此方程无解')
